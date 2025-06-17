@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero'
 import FeatureSlider from '@/components/FeatureSlider'
+import AISection from '@/components/AISection'
 import ScrollStorytelling from '@/components/ScrollStorytelling'
 import ProblemSolution from '@/components/ProblemSolution'
 import PricingTable from '@/components/PricingTable'
@@ -12,6 +13,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <FeatureSlider />
+      <AISection />
       <ScrollStorytelling />
       <ProblemSolution />
       <PricingTable />
