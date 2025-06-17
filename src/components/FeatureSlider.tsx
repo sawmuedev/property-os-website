@@ -108,7 +108,7 @@ export default function FeatureSlider() {
         </motion.div>
 
         {/* Feature Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -121,7 +121,7 @@ export default function FeatureSlider() {
             >
               {/* Glassmorphism Card */}
               <motion.div
-                className="relative bg-white/70 backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden"
+                className="relative bg-white/70 backdrop-blur-md p-6 md:p-8 rounded-2xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden"
                 whileHover={{
                   scale: 1.02,
                   boxShadow: "0 25px 50px rgba(0, 0, 0, 0.15)"
@@ -156,7 +156,7 @@ export default function FeatureSlider() {
 
                 {/* Screenshot Placeholder */}
                 <motion.div
-                  className="h-48 bg-gradient-to-br from-blue-50/80 to-cyan-50/80 backdrop-blur-sm rounded-xl mb-6 flex items-center justify-center border border-blue-200/30 relative overflow-hidden"
+                  className="h-40 md:h-48 bg-gradient-to-br from-blue-50/80 to-cyan-50/80 backdrop-blur-sm rounded-xl mb-6 flex items-center justify-center border border-blue-200/30 relative overflow-hidden"
                   whileHover={{ scale: 1.02 }}
                 >
                   {/* Animated Background */}
@@ -192,13 +192,13 @@ export default function FeatureSlider() {
                 {/* Content */}
                 <div className="relative z-10">
                   <motion.h3
-                    className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300"
+                    className="text-lg md:text-xl font-semibold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300"
                     whileHover={{ x: 5 }}
                   >
                     {feature.title}
                   </motion.h3>
                   <motion.p
-                    className="text-gray-600 leading-relaxed"
+                    className="text-sm md:text-base text-gray-600 leading-relaxed"
                     initial={{ opacity: 0.8 }}
                     whileHover={{ opacity: 1 }}
                   >

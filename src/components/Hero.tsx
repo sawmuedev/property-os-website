@@ -51,8 +51,7 @@ const FloatingParticles = () => {
 
 export default function Hero() {
   const { scrollY } = useScroll()
-  const y = useTransform(scrollY, [0, 500], [0, 150])
-  const opacity = useTransform(scrollY, [0, 300], [1, 0])
+  const y = useTransform(scrollY, [0, 500], [0, 50]) // Reduzierter Parallax-Effekt
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -80,10 +79,10 @@ export default function Hero() {
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
       <motion.div
-        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
-        style={{ y, opacity }}
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20"
+        style={{ y }}
       >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
           {/* Content */}
           <motion.div
@@ -93,7 +92,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -118,7 +117,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="mt-6 text-xl text-gray-600 max-w-2xl"
+              className="mt-4 md:mt-6 text-lg md:text-xl text-gray-600 max-w-2xl"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -128,7 +127,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div
-              className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -140,7 +139,7 @@ export default function Hero() {
               >
                 <Link
                   href="#contact"
-                  className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-2xl hover:shadow-blue-500/25"
+                  className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 shadow-2xl hover:shadow-blue-500/25"
                 >
                   Demo anfragen
                 </Link>
@@ -152,7 +151,7 @@ export default function Hero() {
               >
                 <Link
                   href="#pricing"
-                  className="inline-block border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-xl hover:shadow-2xl"
+                  className="inline-block border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-xl hover:shadow-2xl"
                 >
                   Pakete vergleichen
                 </Link>

@@ -89,20 +89,20 @@ export default function ScrollStorytelling() {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className={`flex items-center gap-12 ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
+              className={`flex flex-col lg:flex-row items-center gap-8 lg:gap-12 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               initial={{ opacity: 0, y: 100 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
               transition={{ duration: 0.8, delay: 0.2 + index * 0.2 }}
               >
                 {/* Content */}
               <motion.div
-                className="flex-1"
+                className="flex-1 text-center lg:text-left"
                 initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
                 transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
                 >
                 <motion.div
-                  className="flex items-center mb-6"
+                  className="flex items-center justify-center lg:justify-start mb-6"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
@@ -127,7 +127,7 @@ export default function ScrollStorytelling() {
 
 
                 <motion.h3
-                  className="text-3xl font-bold text-gray-900 mb-4"
+                  className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.2 }}
@@ -136,7 +136,7 @@ export default function ScrollStorytelling() {
                 </motion.h3>
 
                 <motion.p
-                  className="text-xl text-gray-600 leading-relaxed"
+                  className="text-lg lg:text-xl text-gray-600 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.6, delay: 1 + index * 0.2 }}
@@ -147,13 +147,13 @@ export default function ScrollStorytelling() {
 
               {/* Enhanced Illustration */}
               <motion.div
-                className="flex-1"
+                className="flex-1 w-full max-w-md lg:max-w-none mx-auto"
                 initial={{ opacity: 0, x: index % 2 === 1 ? -50 : 50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 1 ? -50 : 50 }}
                 transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
                 >
                   <motion.div
-                    className="h-80 bg-gradient-to-br from-blue-50/80 to-cyan-50/80 backdrop-blur-sm rounded-2xl border border-blue-200/30 flex items-center justify-center relative overflow-hidden shadow-xl"
+                    className="h-64 lg:h-80 bg-gradient-to-br from-blue-50/80 to-cyan-50/80 backdrop-blur-sm rounded-2xl border border-blue-200/30 flex items-center justify-center relative overflow-hidden shadow-xl"
                     whileHover={{
                       scale: 1.02,
                       y: -5,

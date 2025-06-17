@@ -28,7 +28,7 @@ export default function Navigation() {
         y: navY,
         backdropFilter: `blur(${navBlur}px)`,
       }}
-      className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 rounded-2xl border ${
+      className={`fixed top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 rounded-xl md:rounded-2xl border w-[95%] md:w-auto ${
         isScrolled
           ? 'bg-white/90 border-white/20 shadow-2xl shadow-blue-500/10'
           : 'bg-white/70 border-white/10 shadow-xl'
@@ -37,15 +37,15 @@ export default function Navigation() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-12 md:h-14">
           {/* Logo */}
           <motion.div
             className="flex-shrink-0"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <Link href="/" className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <Link href="/" className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               PropertyOS
             </Link>
           </motion.div>
@@ -79,7 +79,7 @@ export default function Navigation() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-3">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -110,7 +110,7 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <motion.div
-            className="md:hidden"
+            className="lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
@@ -144,7 +144,7 @@ export default function Navigation() {
         initial={false}
         animate={isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="md:hidden overflow-hidden"
+        className="lg:hidden overflow-hidden"
       >
         <motion.div
           className="mt-2 mx-4 rounded-xl bg-white/90 backdrop-blur-md border border-white/20 shadow-xl"

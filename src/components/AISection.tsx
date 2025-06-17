@@ -2,12 +2,10 @@
 
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { 
-  MicrophoneIcon, 
+import {
+  MicrophoneIcon,
   ChatBubbleLeftRightIcon,
   SparklesIcon,
-  ChartBarIcon,
-  ClockIcon,
   BoltIcon
 } from '@heroicons/react/24/outline'
 
@@ -169,8 +167,8 @@ export default function AISection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+          <motion.h2
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -181,8 +179,8 @@ export default function AISection() {
             <br />
             <span className="text-white">– oder im Mittelpunkt, wenn Sie möchten</span>
           </motion.h2>
-          <motion.p 
-            className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+          <motion.p
+            className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -194,7 +192,7 @@ export default function AISection() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* AI Chat Interface */}
           <motion.div
             className="relative"
@@ -227,7 +225,7 @@ export default function AISection() {
               </div>
 
               {/* Chat Messages */}
-              <div className="p-6 h-96 overflow-y-auto space-y-4">
+              <div className="p-4 md:p-6 h-80 md:h-96 overflow-y-auto space-y-4">
                 <AnimatePresence>
                   {chatMessages.slice(0, currentMessageIndex + 1).map((message, index) => (
                     <motion.div
@@ -237,9 +235,9 @@ export default function AISection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <div className={`max-w-xs lg:max-w-md px-4 py-3 rounded-2xl ${
-                        message.type === 'user' 
-                          ? 'bg-blue-600 text-white' 
+                      <div className={`max-w-xs md:max-w-sm lg:max-w-md px-3 md:px-4 py-2 md:py-3 rounded-2xl text-sm md:text-base ${
+                        message.type === 'user'
+                          ? 'bg-blue-600 text-white'
                           : 'bg-white/20 text-white border border-white/30'
                       }`}>
                         {message.type === 'ai' && index === currentMessageIndex ? (
@@ -340,9 +338,9 @@ export default function AISection() {
               whileHover={{ scale: 1.02 }}
             >
               <p className="text-gray-300 leading-relaxed">
-                <span className="text-white font-semibold">So sparen Sie Klicks, Zeit und Umwege.</span> 
-                {' '}Ob „Fasse mir die Besucherfrequenzen der letzten drei Monate zusammen", 
-                „Zeige mir die Social Media-Reichweite im März" oder „Welche offenen Mängel wurden zuletzt gemeldet?" 
+                <span className="text-white font-semibold">So sparen Sie Klicks, Zeit und Umwege.</span>
+                {' '}Ob &ldquo;Fasse mir die Besucherfrequenzen der letzten drei Monate zusammen&rdquo;,
+                &ldquo;Zeige mir die Social Media-Reichweite im März&rdquo; oder &ldquo;Welche offenen Mängel wurden zuletzt gemeldet?&rdquo;
                 – die KI versteht Ihre Anfrage und liefert sofort die passenden Daten, Auswertungen oder Systemansichten.
               </p>
             </motion.div>

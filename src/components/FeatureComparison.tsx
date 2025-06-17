@@ -127,7 +127,7 @@ export default function FeatureComparison() {
         </motion.div>
         
         {/* Enhanced Mobile Cards View */}
-        <div className="lg:hidden space-y-6">
+        <div className="block lg:hidden space-y-6">
           {['Starter', 'Active', 'Master'].map((plan, planIndex) => (
             <motion.div
               key={plan}
