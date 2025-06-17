@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 export default function Hero() {
@@ -24,15 +26,33 @@ export default function Hero() {
             
             {/* CTAs */}
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link 
+              <Link
                 href="#contact"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+                style={{
+                  boxShadow: '0 10px 30px rgba(37, 99, 235, 0.3), 0 4px 15px rgba(0, 0, 0, 0.1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 15px 40px rgba(37, 99, 235, 0.4), 0 6px 20px rgba(0, 0, 0, 0.15)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(37, 99, 235, 0.3), 0 4px 15px rgba(0, 0, 0, 0.1)'
+                }}
               >
                 Demo anfragen
               </Link>
-              <Link 
+              <Link
                 href="#pricing"
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-200"
+                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 bg-white/80 backdrop-blur-sm"
+                style={{
+                  boxShadow: '0 8px 25px rgba(255, 255, 255, 0.8), 0 4px 12px rgba(37, 99, 235, 0.1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = '0 12px 35px rgba(255, 255, 255, 0.9), 0 6px 16px rgba(37, 99, 235, 0.15)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(255, 255, 255, 0.8), 0 4px 12px rgba(37, 99, 235, 0.1)'
+                }}
               >
                 Pakete vergleichen
               </Link>
@@ -63,34 +83,44 @@ export default function Hero() {
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                   </div>
                 </div>
-                <div className="bg-white rounded-b-xl shadow-2xl overflow-hidden">
+                <div className="bg-white/95 backdrop-blur-sm rounded-b-xl overflow-hidden" style={{
+                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1)'
+                }}>
                   {/* Dashboard Placeholder */}
-                  <div className="p-6 bg-gradient-to-br from-blue-50 to-white">
+                  <div className="p-6 bg-gradient-to-br from-blue-50/80 to-white/80 backdrop-blur-sm">
                     <div className="flex items-center justify-between mb-6">
-                      <div className="h-8 w-32 bg-blue-600 rounded"></div>
-                      <div className="h-8 w-8 bg-gray-300 rounded-full"></div>
+                      <div className="h-8 w-32 bg-blue-600 rounded shadow-lg"></div>
+                      <div className="h-8 w-8 bg-gray-300 rounded-full shadow-md"></div>
                     </div>
-                    
+
                     {/* Stats Cards */}
                     <div className="grid grid-cols-3 gap-4 mb-6">
-                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                      <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg" style={{
+                        boxShadow: '0 8px 20px rgba(0, 0, 0, 0.08), 0 3px 8px rgba(0, 0, 0, 0.05)'
+                      }}>
                         <div className="h-4 w-16 bg-gray-300 rounded mb-2"></div>
-                        <div className="h-6 w-12 bg-blue-600 rounded"></div>
+                        <div className="h-6 w-12 bg-blue-600 rounded shadow-sm"></div>
                       </div>
-                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                      <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg" style={{
+                        boxShadow: '0 8px 20px rgba(0, 0, 0, 0.08), 0 3px 8px rgba(0, 0, 0, 0.05)'
+                      }}>
                         <div className="h-4 w-16 bg-gray-300 rounded mb-2"></div>
-                        <div className="h-6 w-12 bg-cyan-600 rounded"></div>
+                        <div className="h-6 w-12 bg-cyan-600 rounded shadow-sm"></div>
                       </div>
-                      <div className="bg-white p-4 rounded-lg shadow-sm">
+                      <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg" style={{
+                        boxShadow: '0 8px 20px rgba(0, 0, 0, 0.08), 0 3px 8px rgba(0, 0, 0, 0.05)'
+                      }}>
                         <div className="h-4 w-16 bg-gray-300 rounded mb-2"></div>
-                        <div className="h-6 w-12 bg-orange-500 rounded"></div>
+                        <div className="h-6 w-12 bg-purple-500 rounded shadow-sm"></div>
                       </div>
                     </div>
-                    
+
                     {/* Chart Placeholder */}
-                    <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg" style={{
+                      boxShadow: '0 8px 20px rgba(0, 0, 0, 0.08), 0 3px 8px rgba(0, 0, 0, 0.05)'
+                    }}>
                       <div className="h-4 w-24 bg-gray-300 rounded mb-4"></div>
-                      <div className="h-32 bg-gradient-to-t from-blue-100 to-blue-50 rounded"></div>
+                      <div className="h-32 bg-gradient-to-t from-blue-100/80 to-blue-50/80 rounded"></div>
                     </div>
                   </div>
                 </div>

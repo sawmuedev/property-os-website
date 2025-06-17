@@ -1,37 +1,45 @@
 'use client'
 
 import { useState } from 'react'
+import {
+  ChartBarIcon,
+  ChatBubbleLeftRightIcon,
+  DevicePhoneMobileIcon,
+  QrCodeIcon,
+  CurrencyEuroIcon,
+  Cog6ToothIcon
+} from '@heroicons/react/24/outline'
 
 const features = [
   {
     title: "Dashboard in Echtzeit",
     description: "KPIs, Besucherzahlen & Webdaten auf einen Blick – mobil & browserbasiert.",
-    icon: "📊"
+    icon: ChartBarIcon
   },
   {
     title: "KI-gestützter Chatbot",
     description: "Besucher fragen – PropertyOS antwortet. Automatisiert. Mehrsprachig. Präzise.",
-    icon: "🤖"
+    icon: ChatBubbleLeftRightIcon
   },
   {
     title: "Social Media & Website aus einer Hand",
     description: "Sie liefern ein Foto – unser Redaktionsteam erledigt den Rest.",
-    icon: "📱"
+    icon: DevicePhoneMobileIcon
   },
   {
     title: "QR-Mängelmelder",
     description: "Ein Scan, ein Klick – technisches Problem sofort im System.",
-    icon: "📱"
+    icon: QrCodeIcon
   },
   {
     title: "Mieter-Umsatzmeldung",
     description: "Mieter senden Monatsumsätze direkt im Tool – datenschutzkonform & zentralisiert.",
-    icon: "💰"
+    icon: CurrencyEuroIcon
   },
   {
     title: "Zentrale Steuerung",
     description: "Steuern Sie MediaStelen, Displays & Inhalte in allen Touchpoints – aus einer Oberfläche.",
-    icon: "🎛️"
+    icon: Cog6ToothIcon
   }
 ]
 
@@ -59,8 +67,8 @@ export default function FeatureSlider() {
               onMouseEnter={() => setActiveFeature(index)}
             >
               {/* Icon */}
-              <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                {feature.icon}
+              <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
+                <feature.icon className="w-12 h-12 text-blue-600" />
               </div>
 
               {/* Screenshot Placeholder */}

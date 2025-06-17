@@ -92,7 +92,7 @@ export default function FeatureComparison() {
             <div key={plan} className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className={`p-6 text-center ${
                 planIndex === 0 ? 'bg-blue-600' :
-                planIndex === 1 ? 'bg-cyan-600' : 'bg-orange-600'
+                planIndex === 1 ? 'bg-cyan-600' : 'bg-purple-600'
               } text-white`}>
                 <h3 className="text-2xl font-bold">CenterOS {plan}</h3>
               </div>
@@ -138,7 +138,7 @@ export default function FeatureComparison() {
                 <th className="px-8 py-6 text-center text-lg font-bold text-cyan-600">
                   Active
                 </th>
-                <th className="px-8 py-6 text-center text-lg font-bold text-orange-600">
+                <th className="px-8 py-6 text-center text-lg font-bold text-purple-600">
                   Master
                 </th>
               </tr>

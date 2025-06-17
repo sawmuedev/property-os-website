@@ -1,3 +1,5 @@
+import { CameraIcon, PencilIcon, RocketLaunchIcon, DevicePhoneMobileIcon, GlobeAltIcon } from '@heroicons/react/24/outline'
+
 const services = [
   "Social Posts inkl. Ad-Schaltung (Meta, Google)",
   "Eventkommunikation für Website & Touchpoints",
@@ -10,19 +12,19 @@ const workflowSteps = [
     step: "Input",
     title: "Sie senden uns Ihr Foto",
     description: "Ein einfaches Foto oder eine kurze Info reicht",
-    icon: "📸"
+    icon: CameraIcon
   },
   {
     step: "Redaktion",
     title: "Unser Team arbeitet",
     description: "Professionelle Aufbereitung für alle Kanäle",
-    icon: "✏️"
+    icon: PencilIcon
   },
   {
     step: "Output",
     title: "Fertige Kommunikation",
     description: "Website, Social Media, MediaStelen – alles ready",
-    icon: "🚀"
+    icon: RocketLaunchIcon
   }
 ]
 
@@ -73,8 +75,8 @@ export default function EditorialService() {
               {workflowSteps.map((step, index) => (
                 <div key={index} className="flex items-center gap-6">
                   {/* Icon */}
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
-                    {step.icon}
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <step.icon className="w-8 h-8 text-white" />
                   </div>
 
                   {/* Content */}
@@ -110,7 +112,7 @@ export default function EditorialService() {
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <div className="h-48 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg mb-4 flex items-center justify-center border-2 border-dashed border-blue-200">
                 <div className="text-center">
-                  <div className="text-4xl mb-2">📱</div>
+                  <DevicePhoneMobileIcon className="w-12 h-12 text-blue-600 mb-2 mx-auto" />
                   <p className="text-blue-600 font-medium">Social Media Post</p>
                 </div>
               </div>
@@ -124,7 +126,7 @@ export default function EditorialService() {
             <div className="bg-white p-6 rounded-xl shadow-sm">
               <div className="h-48 bg-gradient-to-br from-orange-50 to-red-50 rounded-lg mb-4 flex items-center justify-center border-2 border-dashed border-orange-200">
                 <div className="text-center">
-                  <div className="text-4xl mb-2">🌐</div>
+                  <GlobeAltIcon className="w-12 h-12 text-orange-600 mb-2 mx-auto" />
                   <p className="text-orange-600 font-medium">Website News</p>
                 </div>
               </div>

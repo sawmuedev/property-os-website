@@ -1,3 +1,5 @@
+import { ExclamationTriangleIcon, SparklesIcon } from '@heroicons/react/24/outline'
+
 const problemSolutions = [
   {
     problem: "5 Tools, 10 Mails, 3 Telefonate pro Tag",
@@ -36,7 +38,7 @@ export default function ProblemSolution() {
           {/* Problems */}
           <div className="bg-red-50 p-8 rounded-xl border border-red-200">
             <div className="flex items-center mb-8">
-              <div className="text-4xl mr-4">😤</div>
+              <ExclamationTriangleIcon className="w-10 h-10 text-red-600 mr-4" />
               <h3 className="text-2xl font-bold text-red-700">Aktuelle Probleme</h3>
             </div>
             <div className="space-y-6">
@@ -54,7 +56,7 @@ export default function ProblemSolution() {
           {/* Solutions */}
           <div className="bg-green-50 p-8 rounded-xl border border-green-200">
             <div className="flex items-center mb-8">
-              <div className="text-4xl mr-4">✨</div>
+              <SparklesIcon className="w-10 h-10 text-green-600 mr-4" />
               <h3 className="text-2xl font-bold text-green-700">Lösungen mit PropertyOS</h3>
             </div>
             <div className="space-y-6">
@@ -70,27 +72,7 @@ export default function ProblemSolution() {
           </div>
         </div>
 
-        {/* Comparison Table for larger screens */}
-        <div className="mt-16 hidden lg:block">
-          <div className="bg-gray-50 rounded-xl overflow-hidden">
-            <table className="w-full">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="px-8 py-4 text-left text-lg font-bold text-red-700">Problem</th>
-                  <th className="px-8 py-4 text-left text-lg font-bold text-green-700">Lösung mit PropertyOS</th>
-                </tr>
-              </thead>
-              <tbody>
-                {problemSolutions.map((item, index) => (
-                  <tr key={index} className="border-t border-gray-200">
-                    <td className="px-8 py-6 text-red-800 font-medium">{item.problem}</td>
-                    <td className="px-8 py-6 text-green-800 font-medium">{item.solution}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+
 
         {/* CTA */}
         <div className="text-center mt-12">

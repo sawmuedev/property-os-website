@@ -1,27 +1,34 @@
+import {
+  PencilSquareIcon,
+  PencilIcon,
+  ChatBubbleLeftIcon,
+  ChartBarSquareIcon
+} from '@heroicons/react/24/outline'
+
 const steps = [
   {
     number: "01",
     title: "Sie melden ein Event",
     description: "\"Sommerschlussverkauf am 15.8.\" wird via App eingereicht.",
-    icon: "📝"
+    icon: PencilSquareIcon
   },
   {
     number: "02",
     title: "Unsere Redaktion übernimmt",
     description: "Ein Foto reicht – daraus entstehen Post, Website-Update & MediaStele-Teaser.",
-    icon: "✏️"
+    icon: PencilIcon
   },
   {
     number: "03",
     title: "Besucher stellen Fragen",
     description: "\"Gibt's heute einen Deal?\" – der Chatbot antwortet direkt mit passenden Aktionen.",
-    icon: "💬"
+    icon: ChatBubbleLeftIcon
   },
   {
     number: "04",
     title: "Auswertung inklusive",
     description: "Besucherzahlen steigen. Sie sehen den Erfolg live im Dashboard.",
-    icon: "📈"
+    icon: ChartBarSquareIcon
   }
 ]
 
@@ -48,7 +55,7 @@ export default function ScrollStorytelling() {
                   <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
                     {step.number}
                   </div>
-                  <div className="text-4xl">{step.icon}</div>
+                  <step.icon className="w-10 h-10 text-blue-600" />
                 </div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
                   {step.title}
@@ -62,7 +69,7 @@ export default function ScrollStorytelling() {
               <div className="flex-1">
                 <div className="h-80 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border-2 border-dashed border-blue-200 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="text-6xl mb-4">{step.icon}</div>
+                    <step.icon className="w-16 h-16 text-blue-600 mb-4 mx-auto" />
                     <div className="w-32 h-32 bg-blue-200 rounded-lg mx-auto mb-4"></div>
                     <p className="text-blue-600 font-medium">Illustration für Schritt {step.number}</p>
                   </div>
