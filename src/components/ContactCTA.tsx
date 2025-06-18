@@ -1,12 +1,12 @@
 export default function ContactCTA() {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-600 to-cyan-600 text-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-700 to-blue-600 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Bereit für Ihr neues digitales Betriebssystem?
           </h2>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-100 max-w-3xl mx-auto">
             Starten Sie noch heute mit PropertyOS und revolutionieren Sie Ihr Centermanagement
           </p>
         </div>
@@ -14,13 +14,13 @@ export default function ContactCTA() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* CTAs */}
           <div className="space-y-6">
-            <button className="w-full bg-white text-blue-600 py-4 px-8 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="w-full bg-white text-gray-700 py-4 px-8 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors">
               Jetzt Demo anfragen
             </button>
-            <button className="w-full border-2 border-white text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+            <button className="w-full border-2 border-white text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-700 transition-colors">
               Paketübersicht als PDF erhalten
             </button>
-            <button className="w-full border-2 border-white text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+            <button className="w-full border-2 border-white text-white py-4 px-8 rounded-lg text-lg font-semibold hover:bg-white hover:text-gray-700 transition-colors">
               Kostenloses Beratungsgespräch buchen
             </button>
           </div>
@@ -49,9 +49,9 @@ export default function ContactCTA() {
                 rows={4}
                 className="w-full p-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
               ></textarea>
-              <button 
+              <button
                 type="submit"
-                className="w-full bg-white text-blue-600 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="w-full bg-white text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 Nachricht senden
               </button>

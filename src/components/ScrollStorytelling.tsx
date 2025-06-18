@@ -45,7 +45,7 @@ export default function ScrollStorytelling() {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-200/20 to-cyan-200/20 rounded-full filter blur-3xl"
+          className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-200/20 to-emerald-200/20 rounded-full filter blur-3xl"
           animate={{
             x: [0, -30, 0],
             y: [0, 40, 0],
@@ -107,22 +107,12 @@ export default function ScrollStorytelling() {
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
                   >
-                    <motion.div
-                      className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 shadow-lg"
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)"
-                      }}
-                      transition={{ duration: 0.2 }}
-                    >
+                    <div className="w-16 h-16 bg-gradient-to-r from-gray-600 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 shadow-lg">
                       {step.number}
-                    </motion.div>
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                    >
+                    </div>
+                    <div>
                       <step.icon className="w-10 h-10 text-blue-600" />
-                    </motion.div>
+                    </div>
                   </motion.div>
 
 
@@ -152,63 +142,20 @@ export default function ScrollStorytelling() {
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 1 ? -50 : 50 }}
                 transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
                 >
-                  <motion.div
-                    className="h-64 lg:h-80 bg-gradient-to-br from-blue-50/80 to-cyan-50/80 backdrop-blur-sm rounded-2xl border border-blue-200/30 flex items-center justify-center relative overflow-hidden shadow-xl"
-                    whileHover={{
-                      scale: 1.02,
-                      y: -5,
-                      boxShadow: "0 25px 50px rgba(59, 130, 246, 0.15)"
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {/* Animated Background */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10"
-                      animate={{
-                        x: [-100, 100],
-                        opacity: [0, 0.5, 0]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.5
-                      }}
-                    />
+                  <div className="h-64 lg:h-80 bg-gradient-to-br from-blue-50/80 to-emerald-50/80 backdrop-blur-sm rounded-2xl border border-blue-200/30 flex items-center justify-center relative overflow-hidden shadow-xl">
+                    {/* Static Background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400/5 to-emerald-400/5"></div>
 
                     <div className="text-center relative z-10">
-                      <motion.div
-                        animate={{
-                          y: [0, -10, 0],
-                          rotate: [0, 5, -5, 0]
-                        }}
-                        transition={{
-                          duration: 4,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.3
-                        }}
-                      >
+                      <div>
                         <step.icon className="w-16 h-16 text-blue-600 mb-4 mx-auto" />
-                      </motion.div>
+                      </div>
 
-                      <motion.div
-                        className="w-32 h-32 bg-gradient-to-br from-blue-200 to-purple-200 rounded-xl mx-auto mb-4 shadow-lg"
-                        animate={{
-                          scale: [1, 1.05, 1],
-                          rotate: [0, 2, -2, 0]
-                        }}
-                        transition={{
-                          duration: 3,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.2
-                        }}
-                      />
+                      <div className="w-32 h-32 bg-gradient-to-br from-blue-200 to-emerald-200 rounded-xl mx-auto mb-4 shadow-lg" />
 
                       <p className="text-blue-600 font-medium">Illustration für Schritt {step.number}</p>
                     </div>
-                </motion.div>
+                </div>
               </motion.div>
             </motion.div>
           ))}
@@ -230,31 +177,12 @@ export default function ScrollStorytelling() {
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                 transition={{ duration: 0.5, delay: 1.7 + index * 0.1 }}
               >
-                <motion.div
-                  className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg"
-                  whileHover={{
-                    scale: 1.2,
-                    rotate: 360,
-                    boxShadow: "0 8px 25px rgba(59, 130, 246, 0.4)"
-                  }}
-                  animate={{
-                    boxShadow: [
-                      "0 4px 15px rgba(59, 130, 246, 0.3)",
-                      "0 6px 20px rgba(59, 130, 246, 0.5)",
-                      "0 4px 15px rgba(59, 130, 246, 0.3)"
-                    ]
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: index * 0.3
-                  }}
-                >
+                <div className="w-12 h-12 bg-gradient-to-r from-gray-600 to-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
                   {step.number}
-                </motion.div>
+                </div>
                 {index < steps.length - 1 && (
                   <motion.div
-                    className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-4 rounded-full"
+                    className="w-16 h-1 bg-gradient-to-r from-gray-600 to-blue-600 mx-4 rounded-full"
                     initial={{ width: 0 }}
                     animate={isInView ? { width: "4rem" } : { width: 0 }}
                     transition={{ duration: 0.8, delay: 1.9 + index * 0.2 }}

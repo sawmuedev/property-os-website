@@ -104,11 +104,11 @@ export default function AISection() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full filter blur-3xl"
+          className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-full filter blur-3xl"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -121,7 +121,7 @@ export default function AISection() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full filter blur-3xl"
+          className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-emerald-400/20 to-emerald-500/20 rounded-full filter blur-3xl"
           animate={{
             x: [0, -80, 0],
             y: [0, 60, 0],
@@ -134,29 +134,16 @@ export default function AISection() {
             delay: 3
           }}
         />
-        
-        {/* Floating AI Particles */}
-        {Array.from({ length: 15 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-400/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, 20, -20],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
+
+        {/* Subtle Gradient with Analog Grain */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-800/30 via-blue-900/10 to-gray-800/30"></div>
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' result='noise'/%3E%3CfeColorMatrix in='noise' type='saturate' values='0'/%3E%3CfeBlend in='noise' in2='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='0.7'/%3E%3C/svg%3E")`,
+            backgroundSize: '160px 160px'
+          }}
+        ></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
@@ -173,11 +160,11 @@ export default function AISection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="theme-text-gradient-all">
               KI im Hintergrund
             </span>
             <br />
-            <span className="text-white">– oder im Mittelpunkt, wenn Sie möchten</span>
+            <span className="text-white">oder im Mittelpunkt, wenn Sie möchten</span>
           </motion.h2>
           <motion.p
             className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
@@ -207,7 +194,7 @@ export default function AISection() {
               transition={{ duration: 0.3 }}
             >
               {/* Chat Header */}
-              <div className="bg-gradient-to-r from-blue-600/80 to-purple-600/80 p-4 flex items-center gap-3">
+              <div className="bg-gradient-to-r from-gray-700/80 to-blue-600/80 p-4 flex items-center gap-3">
                 <div className="flex space-x-2">
                   <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -307,9 +294,9 @@ export default function AISection() {
                   transition={{ duration: 0.6, delay: 1 + index * 0.2 }}
                   whileHover={{ x: 10 }}
                 >
-                  <motion.div 
-                    className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
-                    whileHover={{ 
+                  <motion.div
+                    className="w-16 h-16 bg-gradient-to-r from-gray-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg"
+                    whileHover={{
                       scale: 1.05,
                       boxShadow: "0 10px 30px rgba(59, 130, 246, 0.4)"
                     }}

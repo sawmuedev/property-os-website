@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import ThemeSwitcher from './ThemeSwitcher'
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -45,7 +46,7 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <Link href="/" className="text-lg md:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <Link href="/" className="text-lg md:text-xl font-bold theme-text-gradient-primary-secondary">
               PropertyOS
             </Link>
           </motion.div>
@@ -70,7 +71,7 @@ export default function Navigation() {
                   >
                     {item.label}
                     <motion.div
-                      className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 group-hover:w-full group-hover:left-0 transition-all duration-300"
+                      className="absolute bottom-0 left-1/2 w-0 h-0.5 theme-gradient-primary-secondary group-hover:w-full group-hover:left-0 transition-all duration-300"
                     />
                   </Link>
                 </motion.div>
@@ -78,8 +79,15 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* Theme Switcher & CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <ThemeSwitcher />
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -101,9 +109,9 @@ export default function Navigation() {
             >
               <Link
                 href="#pricing"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-5 py-2 rounded-xl text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="theme-gradient-primary-secondary text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl whitespace-nowrap"
               >
-                Pakete vergleichen
+                Pakete
               </Link>
             </motion.div>
           </div>
@@ -177,6 +185,14 @@ export default function Navigation() {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="px-3 py-2"
+              >
+                <ThemeSwitcher />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4 }}
               >
                 <Link
@@ -194,7 +210,7 @@ export default function Navigation() {
               >
                 <Link
                   href="#pricing"
-                  className="block px-3 py-2 text-base font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg text-center hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg"
+                  className="block px-3 py-2 text-base font-medium theme-gradient-primary-secondary text-white rounded-lg text-center transition-all duration-300 shadow-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   Pakete vergleichen

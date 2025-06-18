@@ -87,7 +87,7 @@ export default function FeatureComparison() {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-200/20 to-purple-200/20 rounded-full filter blur-3xl"
+          className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-200/20 to-emerald-200/20 rounded-full filter blur-3xl"
           animate={{
             x: [0, 50, 0],
             y: [0, -30, 0],
@@ -140,8 +140,8 @@ export default function FeatureComparison() {
               <motion.div
                 className={`p-6 text-center ${
                   planIndex === 0 ? 'bg-gradient-to-r from-blue-600 to-blue-700' :
-                  planIndex === 1 ? 'bg-gradient-to-r from-cyan-600 to-cyan-700' :
-                  'bg-gradient-to-r from-purple-600 to-purple-700'
+                  planIndex === 1 ? 'bg-gradient-to-r from-emerald-600 to-emerald-700' :
+                  'bg-gradient-to-r from-gray-600 to-gray-700'
                 } text-white`}
                 whileHover={{ scale: 1.02 }}
               >
@@ -213,10 +213,10 @@ export default function FeatureComparison() {
                 <th className="px-8 py-6 text-center text-lg font-bold text-blue-600">
                   Starter
                 </th>
-                <th className="px-8 py-6 text-center text-lg font-bold text-cyan-600">
+                <th className="px-8 py-6 text-center text-lg font-bold text-emerald-600">
                   Active
                 </th>
-                <th className="px-8 py-6 text-center text-lg font-bold text-purple-600">
+                <th className="px-8 py-6 text-center text-lg font-bold text-gray-600">
                   Master
                 </th>
               </motion.tr>
@@ -320,7 +320,7 @@ export default function FeatureComparison() {
               Alle Funktionen als PDF herunterladen
             </motion.button>
             <motion.button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-gray-600 to-blue-600 hover:from-gray-700 hover:to-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{
                 scale: 1.05,
                 y: -2,

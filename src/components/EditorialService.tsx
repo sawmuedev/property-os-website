@@ -1,6 +1,6 @@
 'use client'
 
-import { CameraIcon, PencilIcon, RocketLaunchIcon, DevicePhoneMobileIcon, GlobeAltIcon } from '@heroicons/react/24/outline'
+import { CameraIcon, PencilIcon, RocketLaunchIcon } from '@heroicons/react/24/outline'
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 
@@ -41,7 +41,7 @@ export default function EditorialService() {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-20 left-10 w-80 h-80 bg-gradient-to-r from-blue-200/20 to-cyan-200/20 rounded-full filter blur-3xl"
+          className="absolute top-20 left-10 w-80 h-80 bg-gradient-to-r from-blue-200/20 to-emerald-200/20 rounded-full filter blur-3xl"
           animate={{
             x: [0, 40, 0],
             y: [0, -30, 0],
@@ -128,7 +128,7 @@ export default function EditorialService() {
 
             {/* Additional Info */}
             <motion.div
-              className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-200/50 backdrop-blur-sm"
+              className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-emerald-50 rounded-xl border border-blue-200/50 backdrop-blur-sm"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.6, delay: 1.8 }}
@@ -168,7 +168,7 @@ export default function EditorialService() {
                 >
                   {/* Enhanced Icon */}
                   <motion.div
-                    className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg"
+                    className="w-16 h-16 bg-gradient-to-r from-gray-600 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg"
                     whileHover={{
                       scale: 1.05,
                       boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
@@ -199,7 +199,7 @@ export default function EditorialService() {
                   {/* Enhanced Arrow */}
                   {index < workflowSteps.length - 1 && (
                     <motion.div
-                      className="absolute left-8 mt-20 w-0.5 h-8 bg-gradient-to-b from-blue-600 to-purple-600"
+                      className="absolute left-8 mt-20 w-0.5 h-8 bg-gradient-to-b from-gray-600 to-blue-600"
                       initial={{ height: 0 }}
                       animate={isInView ? { height: "2rem" } : { height: 0 }}
                       transition={{ duration: 0.5, delay: 1.6 + index * 0.2 }}
@@ -210,112 +210,6 @@ export default function EditorialService() {
             </div>
           </motion.div>
         </div>
-
-        {/* Enhanced Example Results */}
-        <motion.div
-          className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl p-8 backdrop-blur-sm"
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 2 }}
-        >
-          <motion.h3
-            className="text-2xl font-bold text-gray-900 mb-8 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 2.2 }}
-          >
-            Beispiele unserer Arbeit
-          </motion.h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Example 1 */}
-            <motion.div
-              className="bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-white/20"
-              initial={{ opacity: 0, x: -30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-              transition={{ duration: 0.6, delay: 2.4 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <motion.div
-                className="h-48 bg-gradient-to-br from-blue-50/80 to-cyan-50/80 rounded-lg mb-4 flex items-center justify-center border border-blue-200/30 relative overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="text-center relative z-10">
-                  <motion.div
-                    animate={{
-                      y: [0, -5, 0],
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    <DevicePhoneMobileIcon className="w-12 h-12 text-blue-600 mb-2 mx-auto" />
-                  </motion.div>
-                  <p className="text-blue-600 font-medium">Social Media Post</p>
-                </div>
-              </motion.div>
-              <h4 className="font-bold text-gray-900 mb-2">Social Media Kampagne</h4>
-              <p className="text-gray-600 text-sm">
-                Aus einem Foto wird eine komplette Social Media Kampagne mit Posts, Stories und Ads.
-              </p>
-            </motion.div>
-
-            {/* Example 2 */}
-            <motion.div
-              className="bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-white/20"
-              initial={{ opacity: 0, x: 30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-              transition={{ duration: 0.6, delay: 2.6 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <motion.div
-                className="h-48 bg-gradient-to-br from-orange-50/80 to-red-50/80 rounded-lg mb-4 flex items-center justify-center border border-orange-200/30 relative overflow-hidden"
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="text-center relative z-10">
-                  <motion.div
-                    animate={{
-                      rotate: [0, 5, -5, 0],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  >
-                    <GlobeAltIcon className="w-12 h-12 text-orange-600 mb-2 mx-auto" />
-                  </motion.div>
-                  <p className="text-orange-600 font-medium">Website News</p>
-                </div>
-              </motion.div>
-              <h4 className="font-bold text-gray-900 mb-2">Website Integration</h4>
-              <p className="text-gray-600 text-sm">
-                Automatische Erstellung von Website-News und MediaStelen-Content.
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Enhanced CTA */}
-        <motion.div
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 2.8 }}
-        >
-          <motion.button
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-            whileHover={{
-              scale: 1.05,
-              y: -2,
-              boxShadow: "0 15px 35px rgba(59, 130, 246, 0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Redaktionsservice testen
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   )

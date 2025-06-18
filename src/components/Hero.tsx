@@ -24,7 +24,7 @@ const FloatingParticles = () => {
       {particles.map((particle) => (
         <motion.div
           key={particle.id}
-          className="absolute rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 backdrop-blur-sm"
+          className="absolute rounded-full bg-gradient-to-r from-blue-400/20 to-emerald-400/20 backdrop-blur-sm"
           style={{
             left: `${particle.x}%`,
             top: `${particle.y}%`,
@@ -99,7 +99,7 @@ export default function Hero() {
             >
               Die zentrale Plattform für{' '}
               <motion.span
-                className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent"
+                className="theme-text-gradient-all"
                 animate={{
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                 }}
@@ -139,7 +139,7 @@ export default function Hero() {
               >
                 <Link
                   href="#contact"
-                  className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 shadow-2xl hover:shadow-blue-500/25"
+                  className="inline-block theme-gradient-primary-secondary text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 shadow-2xl theme-shadow-secondary"
                 >
                   Demo anfragen
                 </Link>
@@ -151,7 +151,7 @@ export default function Hero() {
               >
                 <Link
                   href="#pricing"
-                  className="inline-block border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-xl hover:shadow-2xl"
+                  className="inline-block border-2 theme-border-secondary theme-secondary theme-hover-secondary hover:text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-xl hover:shadow-2xl"
                 >
                   Pakete vergleichen
                 </Link>
@@ -227,7 +227,7 @@ export default function Hero() {
                   transition={{ duration: 0.5, delay: 0.9 }}
                 >
                   {/* Dashboard Placeholder */}
-                  <div className="p-6 bg-gradient-to-br from-blue-50/80 to-white/80 backdrop-blur-sm">
+                  <div className="p-6 bg-gradient-to-br from-gray-50/80 to-white/80 backdrop-blur-sm">
                     <motion.div
                       className="flex items-center justify-between mb-6"
                       initial={{ y: 10, opacity: 0 }}
@@ -235,7 +235,7 @@ export default function Hero() {
                       transition={{ duration: 0.5, delay: 1.1 }}
                     >
                       <motion.div
-                        className="h-8 w-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded shadow-lg"
+                        className="h-8 w-32 bg-gradient-to-r from-gray-600 to-blue-600 rounded shadow-lg"
                         animate={{
                           boxShadow: [
                             "0 4px 15px rgba(37, 99, 235, 0.3)",
@@ -256,8 +256,8 @@ export default function Hero() {
                     <div className="grid grid-cols-3 gap-4 mb-6">
                       {[
                         { color: 'from-blue-600 to-blue-700', delay: 1.2 },
-                        { color: 'from-cyan-600 to-cyan-700', delay: 1.3 },
-                        { color: 'from-purple-500 to-purple-600', delay: 1.4 }
+                        { color: 'from-emerald-600 to-emerald-700', delay: 1.3 },
+                        { color: 'from-gray-600 to-gray-700', delay: 1.4 }
                       ].map((card, index) => (
                         <motion.div
                           key={index}
@@ -298,7 +298,7 @@ export default function Hero() {
                         transition={{ duration: 0.8, delay: 1.7 }}
                       />
                       <motion.div
-                        className="h-32 bg-gradient-to-t from-blue-100/80 to-blue-50/80 rounded"
+                        className="h-32 bg-gradient-to-t from-gray-100/80 to-gray-50/80 rounded"
                         initial={{ height: 0 }}
                         animate={{ height: "8rem" }}
                         transition={{ duration: 1, delay: 1.8 }}
@@ -331,7 +331,7 @@ export default function Hero() {
                       />
                       <div className="space-y-2">
                         {[
-                          { width: "100%", color: "bg-gradient-to-r from-blue-600 to-purple-600", delay: 1.6 },
+                          { width: "100%", color: "bg-gradient-to-r from-gray-600 to-blue-600", delay: 1.6 },
                           { width: "75%", color: "bg-gray-300", delay: 1.7 },
                           { width: "50%", color: "bg-gray-300", delay: 1.8 }
                         ].map((bar, index) => (
@@ -353,7 +353,7 @@ export default function Hero() {
 
             {/* Enhanced Background Elements */}
             <motion.div
-              className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+              className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-blue-200 to-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"
               animate={{
                 scale: [1, 1.1, 1],
                 opacity: [0.3, 0.5, 0.3],
@@ -366,7 +366,7 @@ export default function Hero() {
               }}
             />
             <motion.div
-              className="absolute -bottom-8 -right-8 w-72 h-72 bg-gradient-to-r from-cyan-200 to-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"
+              className="absolute -bottom-8 -right-8 w-72 h-72 bg-gradient-to-r from-emerald-200 to-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30"
               animate={{
                 scale: [1.1, 1, 1.1],
                 opacity: [0.5, 0.3, 0.5],

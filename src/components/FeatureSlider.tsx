@@ -54,7 +54,7 @@ export default function FeatureSlider() {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full filter blur-3xl"
+          className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-r from-blue-200/30 to-emerald-200/30 rounded-full filter blur-3xl"
           animate={{
             x: [0, 50, 0],
             y: [0, -30, 0],
@@ -67,7 +67,7 @@ export default function FeatureSlider() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-200/30 to-blue-200/30 rounded-full filter blur-3xl"
+          className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-emerald-200/30 to-blue-200/30 rounded-full filter blur-3xl"
           animate={{
             x: [0, -40, 0],
             y: [0, 40, 0],
@@ -134,7 +134,7 @@ export default function FeatureSlider() {
                 <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                   style={{
-                    background: "linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(147, 51, 234, 0.05) 100%)"
+                    background: "linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(6, 214, 160, 0.05) 100%)"
                   }}
                 />
 
@@ -145,7 +145,7 @@ export default function FeatureSlider() {
                   transition={{ duration: 0.2 }}
                 >
                   <motion.div
-                    className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
+                    className="w-16 h-16 bg-gradient-to-r from-gray-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg"
                     whileHover={{
                       boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
                     }}
@@ -156,12 +156,12 @@ export default function FeatureSlider() {
 
                 {/* Screenshot Placeholder */}
                 <motion.div
-                  className="h-40 md:h-48 bg-gradient-to-br from-blue-50/80 to-cyan-50/80 backdrop-blur-sm rounded-xl mb-6 flex items-center justify-center border border-blue-200/30 relative overflow-hidden"
+                  className="h-40 md:h-48 bg-gradient-to-br from-blue-50/80 to-emerald-50/80 backdrop-blur-sm rounded-xl mb-6 flex items-center justify-center border border-blue-200/30 relative overflow-hidden"
                   whileHover={{ scale: 1.02 }}
                 >
                   {/* Animated Background */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-purple-400/10"
+                    className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-emerald-400/10"
                     animate={{
                       x: [-100, 100],
                       opacity: [0, 0.5, 0]
@@ -175,7 +175,7 @@ export default function FeatureSlider() {
 
                   <div className="text-center relative z-10">
                     <motion.div
-                      className="w-16 h-16 bg-gradient-to-r from-blue-200 to-purple-200 rounded-xl mx-auto mb-2 shadow-lg"
+                      className="w-16 h-16 bg-gradient-to-r from-blue-200 to-emerald-200 rounded-xl mx-auto mb-2 shadow-lg"
                       animate={{
                         scale: [1, 1.05, 1],
                       }}
@@ -213,7 +213,7 @@ export default function FeatureSlider() {
                     transition={{ duration: 0.3 }}
                   >
                     <motion.div
-                      className="h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
+                      className="h-full bg-gradient-to-r from-gray-600 to-blue-600 rounded-full"
                       initial={{ width: 0 }}
                       whileHover={{ width: "100%" }}
                       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -261,7 +261,7 @@ export default function FeatureSlider() {
               <motion.div
                 className={`w-full h-full rounded-full transition-all duration-300 ${
                   activeFeature === index
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600'
+                    ? 'bg-gradient-to-r from-gray-600 to-blue-600'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 animate={activeFeature === index ? {

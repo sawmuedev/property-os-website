@@ -57,7 +57,7 @@ export default function PricingTable() {
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-200/20 to-purple-200/20 rounded-full filter blur-3xl"
+          className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-200/20 to-emerald-200/20 rounded-full filter blur-3xl"
           animate={{
             x: [0, -50, 0],
             y: [0, 30, 0],
@@ -70,7 +70,7 @@ export default function PricingTable() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-r from-cyan-200/20 to-blue-200/20 rounded-full filter blur-3xl"
+          className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-r from-emerald-200/20 to-blue-200/20 rounded-full filter blur-3xl"
           animate={{
             x: [0, 60, 0],
             y: [0, -40, 0],
@@ -124,32 +124,8 @@ export default function PricingTable() {
                 scale: pkg.popular ? 1.08 : 1.05
               }}
             >
-              {/* Animated Border for Popular Package */}
-              {pkg.popular && (
-                <motion.div
-                  className="absolute inset-0 rounded-2xl"
-                  style={{
-                    background: "linear-gradient(45deg, #06b6d4, #3b82f6, #8b5cf6, #06b6d4)",
-                    backgroundSize: "300% 300%",
-                    padding: "2px"
-                  }}
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <div className="w-full h-full bg-white rounded-2xl" />
-                </motion.div>
-              )}
-
               <motion.div
-                className={`relative bg-white/95 backdrop-blur-sm rounded-2xl transition-all duration-500 ${
-                  !pkg.popular ? 'border border-gray-200' : ''
-                } ${pkg.popular ? 'pt-6' : ''}`}
+                className={`relative bg-white/95 backdrop-blur-sm rounded-2xl transition-all duration-500 border border-gray-200 ${pkg.popular ? 'pt-6' : ''}`}
                 style={{
                   boxShadow: pkg.popular
                     ? '0 25px 50px rgba(6, 182, 212, 0.15), 0 10px 25px rgba(0, 0, 0, 0.1)'
@@ -161,32 +137,13 @@ export default function PricingTable() {
                     : '0 30px 60px rgba(0, 0, 0, 0.12), 0 12px 30px rgba(0, 0, 0, 0.08)'
                 }}
               >
-                  {/* Enhanced Popular Badge */}
+                  {/* Popular Badge */}
                 {pkg.popular && (
-                  <motion.div
-                    className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.6, delay: 1.2, type: "spring", stiffness: 200 }}
-                  >
-                    <motion.div
-                      className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold whitespace-nowrap shadow-lg"
-                      animate={{
-                        boxShadow: [
-                          "0 4px 15px rgba(6, 182, 212, 0.4)",
-                          "0 6px 20px rgba(6, 182, 212, 0.6)",
-                          "0 4px 15px rgba(6, 182, 212, 0.4)"
-                        ]
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                    <div className="bg-gradient-to-r from-emerald-500 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold whitespace-nowrap shadow-lg">
                       Beliebtestes Paket
-                    </motion.div>
-                  </motion.div>
+                    </div>
+                  </div>
                 )}
 
                 <div className={`p-8 ${pkg.popular ? 'pt-12' : ''}`}>
@@ -200,8 +157,8 @@ export default function PricingTable() {
                   <motion.h3
                     className={`text-2xl font-bold mb-2 ${
                       pkg.color === 'blue' ? 'text-blue-600' :
-                      pkg.color === 'cyan' ? 'text-cyan-600' :
-                      pkg.color === 'purple' ? 'text-purple-600' : 'text-gray-600'
+                      pkg.color === 'cyan' ? 'text-emerald-600' :
+                      pkg.color === 'purple' ? 'text-gray-600' : 'text-gray-600'
                     }`}
                     whileHover={{ scale: 1.05 }}
                   >
@@ -238,8 +195,8 @@ export default function PricingTable() {
                         <motion.div
                           className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
                             pkg.color === 'blue' ? 'bg-blue-100' :
-                            pkg.color === 'cyan' ? 'bg-cyan-100' :
-                            pkg.color === 'purple' ? 'bg-purple-100' : 'bg-gray-100'
+                            pkg.color === 'cyan' ? 'bg-emerald-100' :
+                            pkg.color === 'purple' ? 'bg-gray-100' : 'bg-gray-100'
                           }`}
                           whileHover={{ scale: 1.1 }}
                           transition={{ duration: 0.2 }}
@@ -247,8 +204,8 @@ export default function PricingTable() {
                           <motion.span
                             className={`text-xs font-bold ${
                               pkg.color === 'blue' ? 'text-blue-600' :
-                              pkg.color === 'cyan' ? 'text-cyan-600' :
-                              pkg.color === 'purple' ? 'text-purple-600' : 'text-gray-600'
+                              pkg.color === 'cyan' ? 'text-emerald-600' :
+                              pkg.color === 'purple' ? 'text-gray-600' : 'text-gray-600'
                             }`}
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
@@ -280,11 +237,11 @@ export default function PricingTable() {
                 <motion.button
                   className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${
                     pkg.popular
-                      ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white hover:from-cyan-700 hover:to-blue-700'
+                      ? 'bg-gradient-to-r from-emerald-600 to-blue-600 text-white hover:from-emerald-700 hover:to-blue-700'
                       : pkg.color === 'blue'
                         ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white'
                         : pkg.color === 'purple'
-                          ? 'bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white'
+                          ? 'bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white'
                           : 'bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white'
                   }`}
                   initial={{ opacity: 0, y: 20 }}
@@ -297,11 +254,11 @@ export default function PricingTable() {
                   whileTap={{ scale: 0.95 }}
                   style={{
                     boxShadow: pkg.popular
-                      ? '0 8px 25px rgba(6, 182, 212, 0.3)'
+                      ? '0 8px 25px rgba(6, 214, 160, 0.3)'
                       : pkg.color === 'blue'
                         ? '0 6px 20px rgba(37, 99, 235, 0.3)'
                         : pkg.color === 'purple'
-                          ? '0 6px 20px rgba(147, 51, 234, 0.3)'
+                          ? '0 6px 20px rgba(75, 85, 99, 0.3)'
                           : '0 6px 20px rgba(75, 85, 99, 0.3)'
                   }}
                 >
@@ -339,7 +296,7 @@ export default function PricingTable() {
               Alle Funktionen als PDF herunterladen
             </motion.button>
             <motion.button
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-gray-600 to-blue-600 hover:from-gray-700 hover:to-blue-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{
                 scale: 1.05,
                 y: -2,
