@@ -157,29 +157,6 @@ export default function Hero() {
                 </Link>
               </motion.div>
             </motion.div>
-
-            {/* Trust Indicators */}
-            <motion.div
-              className="mt-12"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <p className="text-sm text-gray-500 mb-4">Vertraut von führenden Centern</p>
-              <div className="flex flex-wrap justify-center lg:justify-start items-center gap-8 opacity-60">
-                {/* Animated Placeholder Logos */}
-                {[0, 1, 2, 3].map((index) => (
-                  <motion.div
-                    key={index}
-                    className="h-8 w-24 bg-gradient-to-r from-gray-200 to-gray-300 rounded"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                  />
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Mockup */}
