@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import ThemeSwitcher from './ThemeSwitcher'
+
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -79,19 +79,12 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Theme Switcher & CTA Buttons */}
+          {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-3">
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-            >
-              <ThemeSwitcher />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6 }}
             >
               <Link
                 href="#contact"
@@ -103,7 +96,7 @@ export default function Navigation() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.7 }}
+              transition={{ delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -186,14 +179,6 @@ export default function Navigation() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
-                className="px-3 py-2"
-              >
-                <ThemeSwitcher />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4 }}
               >
                 <Link
                   href="#contact"
@@ -206,7 +191,7 @@ export default function Navigation() {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.4 }}
               >
                 <Link
                   href="#pricing"

@@ -80,8 +80,97 @@ export default function Footer() {
           </div>
         </div>
         
+        {/* Credibility Section */}
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+
+            {/* Trust Badges */}
+            <div className="flex flex-col sm:flex-row items-center gap-6">
+              {/* GCSP Technologie-Partner Badge */}
+              <div className="flex items-center gap-3">
+                <div className="w-16 h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                  <img
+                    src="/assets/logos/partnerlogo.gif"
+                    alt="GCSP Technologie-Partner Logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="text-sm">
+                  <div className="text-gray-300 font-medium">GCSP Technologie-Partner</div>
+                  <div className="text-gray-500 text-xs">German Council of Shopping Places</div>
+                </div>
+              </div>
+
+              {/* EHI Partner Badge */}
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                  <img
+                    src="/assets/logos/ehi.png"
+                    alt="EHI Logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="text-sm">
+                  <div className="text-gray-300 font-medium">EHI Partner</div>
+                  <div className="text-gray-500 text-xs">Retail Institute</div>
+                </div>
+              </div>
+
+              {/* BCSD Partner Badge */}
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-1">
+                  <img
+                    src="/assets/logos/bcsd-logo.png"
+                    alt="BCSD Logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="text-sm">
+                  <div className="text-gray-300 font-medium">BCSD Partner</div>
+                  <div className="text-gray-500 text-xs">Bundesvereinigung City- und Stadtmarketing</div>
+                </div>
+              </div>
+
+              {/* SSL Badge */}
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-green-600 rounded flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-gray-400 text-sm">SSL-verschlüsselt</span>
+              </div>
+
+              {/* DSGVO Badge */}
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
+                  <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <span className="text-gray-400 text-sm">DSGVO-konform</span>
+              </div>
+            </div>
+
+            {/* Company Credit */}
+            <div className="text-center lg:text-right">
+              <p className="text-gray-400 text-sm">
+                PropertyOS – entwickelt von{' '}
+                <a
+                  href="https://sawatzki-muehlenbruch.de/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 font-medium hover:text-white transition-colors"
+                >
+                  SawatzkiMühlenbruch
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 mt-6 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
             © 2024 PropertyOS. Alle Rechte vorbehalten.
           </p>

@@ -1,10 +1,10 @@
 'use client'
 
-import React, { createContext, useContext, useState, useEffect } from 'react'
-import { ThemeContextType, ThemeName } from '@/types/theme'
+import React, { createContext, useContext, useEffect, useCallback } from 'react'
 import { colorPalettes, defaultTheme } from '@/config/colorPalettes'
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+// Simplified theme context - only provides the fixed theme
+const ThemeContext = createContext<{ currentPalette: typeof colorPalettes[typeof defaultTheme] } | undefined>(undefined)
 
 export function useTheme() {
   const context = useContext(ThemeContext)
@@ -19,11 +19,11 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [currentTheme, setCurrentTheme] = useState<ThemeName>(defaultTheme)
+  const currentPalette = colorPalettes[defaultTheme]
 
-  // Apply theme colors to CSS custom properties and create dynamic Tailwind classes
-  const applyTheme = (themeName: ThemeName) => {
-    const palette = colorPalettes[themeName]
+  // Apply the fixed theme colors to CSS custom properties and create dynamic Tailwind classes
+  const applyTheme = useCallback(() => {
+    const palette = currentPalette
     const root = document.documentElement
 
     // Apply CSS custom properties
@@ -158,30 +158,15 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       .theme-shadow-secondary { box-shadow: 0 10px 25px ${palette.colors.secondary}40 !important; }
     `
     document.head.appendChild(style)
-  }
+  }, [currentPalette])
 
-  const setTheme = (themeName: ThemeName) => {
-    setCurrentTheme(themeName)
-    applyTheme(themeName)
-    // Optional: Save to localStorage for persistence
-    localStorage.setItem('theme-preference', themeName)
-  }
-
-  // Load saved theme on mount
+  // Apply theme on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme-preference') as ThemeName
-    if (savedTheme && colorPalettes[savedTheme]) {
-      setCurrentTheme(savedTheme)
-      applyTheme(savedTheme)
-    } else {
-      applyTheme(defaultTheme)
-    }
-  }, [])
+    applyTheme()
+  }, [applyTheme])
 
-  const value: ThemeContextType = {
-    currentTheme,
-    setTheme,
-    currentPalette: colorPalettes[currentTheme]
+  const value = {
+    currentPalette
   }
 
   return (

@@ -161,37 +161,7 @@ export default function ScrollStorytelling() {
           ))}
         </div>
 
-        {/* Enhanced Process Flow Visualization */}
-        <motion.div
-          className="mt-24 flex justify-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-        >
-          <div className="flex items-center space-x-4">
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center"
-                initial={{ opacity: 0, scale: 0 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                transition={{ duration: 0.5, delay: 1.7 + index * 0.1 }}
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-gray-600 to-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                  {step.number}
-                </div>
-                {index < steps.length - 1 && (
-                  <motion.div
-                    className="w-16 h-1 bg-gradient-to-r from-gray-600 to-blue-600 mx-4 rounded-full"
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: "4rem" } : { width: 0 }}
-                    transition={{ duration: 0.8, delay: 1.9 + index * 0.2 }}
-                  />
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
       </div>
     </section>
   )

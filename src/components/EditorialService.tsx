@@ -108,19 +108,11 @@ export default function EditorialService() {
                   whileHover={{ x: 5 }}
                 >
                   <motion.div
-                    className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <motion.span
-                      className="text-blue-600 font-bold"
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ duration: 0.3, delay: 1.2 + index * 0.1 }}
-                    >
-                      ✓
-                    </motion.span>
-                  </motion.div>
+                    className="w-2 h-2 bg-blue-600 rounded-full flex-shrink-0 mt-3"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.3, delay: 1.2 + index * 0.1 }}
+                  />
                   <span className="text-gray-700 text-lg leading-relaxed">{service}</span>
                 </motion.li>
               ))}
@@ -134,8 +126,12 @@ export default function EditorialService() {
               transition={{ duration: 0.6, delay: 1.8 }}
               whileHover={{ scale: 1.02 }}
             >
-              <h4 className="font-bold text-blue-900 mb-2">Warum unser Redaktionsservice?</h4>
-              <p className="text-blue-800 text-sm">
+              <h4 className="font-bold text-blue-900 mb-3">Warum unser Redaktionsservice?</h4>
+              <p className="text-blue-800 text-sm mb-3">
+                Unsere Redakteure verstehen Shoppingcenter – durch die tägliche Betreuung von Centern
+                jeder Größe kennen wir deren Kommunikationsbedürfnisse aus der Praxis.
+              </p>
+              <p className="text-blue-700 text-sm">
                 Sparen Sie Zeit und Ressourcen. Unser erfahrenes Team sorgt für konsistente,
                 professionelle Kommunikation über alle Kanäle hinweg.
               </p>
@@ -196,15 +192,7 @@ export default function EditorialService() {
                     </p>
                   </motion.div>
 
-                  {/* Enhanced Arrow */}
-                  {index < workflowSteps.length - 1 && (
-                    <motion.div
-                      className="absolute left-8 mt-20 w-0.5 h-8 bg-gradient-to-b from-gray-600 to-blue-600"
-                      initial={{ height: 0 }}
-                      animate={isInView ? { height: "2rem" } : { height: 0 }}
-                      transition={{ duration: 0.5, delay: 1.6 + index * 0.2 }}
-                    />
-                  )}
+
                 </motion.div>
               ))}
             </div>

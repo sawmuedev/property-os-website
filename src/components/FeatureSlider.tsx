@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
   ChartBarIcon,
@@ -45,7 +45,6 @@ const features = [
 ]
 
 export default function FeatureSlider() {
-  const [activeFeature, setActiveFeature] = useState(0)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -116,7 +115,7 @@ export default function FeatureSlider() {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-              onMouseEnter={() => setActiveFeature(index)}
+
               whileHover={{ y: -8 }}
             >
               {/* Glassmorphism Card */}
@@ -239,43 +238,7 @@ export default function FeatureSlider() {
           ))}
         </div>
 
-        {/* Enhanced Feature Navigation Dots */}
-        <motion.div
-          className="flex justify-center mt-16 space-x-3"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-        >
-          {features.map((_, index) => (
-            <motion.button
-              key={index}
-              onClick={() => setActiveFeature(index)}
-              className={`relative rounded-full transition-all duration-300 ${
-                activeFeature === index
-                  ? 'w-10 h-3'
-                  : 'w-3 h-3'
-              }`}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <motion.div
-                className={`w-full h-full rounded-full transition-all duration-300 ${
-                  activeFeature === index
-                    ? 'bg-gradient-to-r from-gray-600 to-blue-600'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-                animate={activeFeature === index ? {
-                  boxShadow: [
-                    "0 0 0 0 rgba(59, 130, 246, 0.4)",
-                    "0 0 0 8px rgba(59, 130, 246, 0)",
-                    "0 0 0 0 rgba(59, 130, 246, 0)"
-                  ]
-                } : {}}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              />
-            </motion.button>
-          ))}
-        </motion.div>
+
       </div>
     </section>
   )
